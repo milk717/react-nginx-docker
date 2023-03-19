@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+## 첫 번째 시도
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. 테스트용 ec2 생성함.
+2. 보안규칙에서 http랑 https 포트 열어줌.
+3. 새로 생성한 ec2에 도커 설치
+4. 내 프로젝트에 도커파일 생성.
 
-## Available Scripts
+### cicd 구축 전에 이미지 제대로 받아와지는지 테스트
 
-In the project directory, you can run:
+1. 내 로컬에서 도커허브로 이미지 올리기
+    1. 터미널에서 도커허브 로그인
+    2. 내 프로젝트 도커빌드 (amd 어쩌구 해서 리눅스 명시)
+    3. 도커허브로 이미지 푸시
+2. Ec2에서 도커 이미지 받아오기
+3. 받아온 도커 이미지 실행
 
-### `npm start`
+### 본격적으로 cicd 구축하기
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. [https://bgpark.tistory.com/85](https://bgpark.tistory.com/85) Ec2 비밀번호로 로그인 설정
+2. 깃헙 레포지토리 시크릿에 도커허브 계정정보, aws 접속관련정보 저장
+3. 깃헙 워크플로우 작성. (https://github.com/docker/metadata-action 참고함) Semver 로 했는데 버전이 어디에 적히는지 모르겠음.
+4. deploy 부분은 https://github.com/appleboy/ssh-action 참고함.
+5. Ec2 주소로 들어가니 사이트 정상 동작함.

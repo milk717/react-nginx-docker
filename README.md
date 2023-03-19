@@ -26,3 +26,12 @@
 > 1. React 빌드 후 배포한 것이 아니라 ec2에서 npm start로 실행함.
 > 2. nginx는??!?
 
+# 두 번째 시도
+1. nginx.cof 파일 생성
+2. nginx 이미지 사용하도록 Dockerfile 새로 작성
+3. 깃헙 워크플로우에 빌드 스텝 추가
+
+## 앞으로 남은 할일
+
+- docker meta 에서 버전 tag 어떻게 관리하는지 알아보기
+- docker-compose 공부

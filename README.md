@@ -21,3 +21,8 @@
 3. 깃헙 워크플로우 작성. (https://github.com/docker/metadata-action 참고함) Semver 로 했는데 버전이 어디에 적히는지 모르겠음.
 4. deploy 부분은 https://github.com/appleboy/ssh-action 참고함.
 5. Ec2 주소로 들어가니 사이트 정상 동작함.
+
+> 첫 번째 시도 문제점
+> 1. React 빌드 후 배포한 것이 아니라 ec2에서 npm start로 실행함.
+> 2. nginx는??!?
+

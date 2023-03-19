@@ -59,6 +59,6 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           script: |
-            docker pull ${{ secrets.DOCKER_USERNAME }}/react-test:main
-            docker run -d -p 443:3000 ${{ secrets.DOCKER_USERNAME }}/react-test:main
+            docker pull ${{ secrets.DOCKER_USERNAME }}/react-test:${{ steps.meta.outputs.tags }}
+            docker run -d -p 443:3000 ${{ secrets.DOCKER_USERNAME }}/react-test:${{ steps.meta.outputs.tags }}
             docker image prune -f

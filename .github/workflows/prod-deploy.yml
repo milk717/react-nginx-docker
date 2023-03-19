@@ -25,6 +25,9 @@ jobs:
       - name: Install dependencies
         run: yarn
 
+      - name: Build Project
+        run: yarn build
+
       - name: Docker meta
         id: meta
         uses: docker/metadata-action@v4
